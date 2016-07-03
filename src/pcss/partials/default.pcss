@@ -1,0 +1,24 @@
+html {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;  
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+}
+
+.disable-hover, .disable-hover * {
+  pointer-events: none !important;
+}
+
+.partial[data-partial="layouts/default"] {
+  .no-select {
+    user-select: none;
+  }
+}
