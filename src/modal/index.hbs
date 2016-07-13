@@ -3,7 +3,7 @@ class: #string
 deep: "modal"
 ajax: #"ajax/"
 ---
-<aside class="partial controller{{#if class}} {{class}}{{/if}}" data-package="agency-pkg-layouts" data-partial="layouts/modal" data-controller="agency-pkg-layouts/partials/Modal" data-deep="{{deep}}"{{#if ajax}} data-ajax="{{ajax}}"{{/if}}>
+<aside class="pkg controller{{#if class}} {{class}}{{/if}}" data-pkg="agency-pkg-layouts/modal" data-controller="agency-pkg-layouts/Modal" data-deep="{{deep}}"{{#if ajax}} data-ajax="{{ajax}}"{{/if}}>
   {{#block "spinner"}}{{/block}}
 
   {{{mixin "agency-pkg-elements/link/deep" class="close" deep=deep url="#" title="&times;"}}}
