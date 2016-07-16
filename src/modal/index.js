@@ -1,6 +1,6 @@
 "use strict";
 
-var ContentManager = require('agency-pkg-base/controller/ContentManager');
+var ContentManager = require('agency-pkg-base/Controller/ContentManager');
 var browserHistory = require('agency-pkg-services/history');
 var preventOverscroll = require('prevent-overscroll');
 
