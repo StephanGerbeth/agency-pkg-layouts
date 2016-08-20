@@ -48,7 +48,7 @@
 
   <title>{{title}}</title>
 
-  <link rel="shortcut icon" type="image/x-icon" href="{{relativeToRoot}}/{{{globals.head.meta.favicon}}}">
+  <link rel="shortcut icon" type="image/x-icon" href="{{relativeToRoot}}{{{globals.head.meta.favicon}}}">
 
   <style type="text/css">
       {{{raw options.scripts.css.critical}}}
@@ -58,10 +58,10 @@
     {{#each globals.fonts}}
       @font-face {
         font-family: '{{name}}';
-        src: url('{{../relativeToRoot}}/{{{this.path}}}.eot');
-        src: url('{{../relativeToRoot}}/{{this.path}}.eot?#iefix') format('embedded-opentype'),
-        url('{{../relativeToRoot}}/{{this.path}}.woff') format('woff'),
-        url('{{../relativeToRoot}}/{{this.path}}.ttf') format('truetype');
+        src: url('{{../relativeToRoot}}{{{this.path}}}.eot');
+        src: url('{{../relativeToRoot}}{{this.path}}.eot?#iefix') format('embedded-opentype'),
+        url('{{../relativeToRoot}}{{this.path}}.woff') format('woff'),
+        url('{{../relativeToRoot}}{{this.path}}.ttf') format('truetype');
         font-style: {{style}};
         font-weight: {{weight}};
       }
@@ -83,7 +83,7 @@
   </script>
 
   {{#unless options.server.websocket}}
-    <link type="text/css" rel="stylesheet" href="{{relativeToRoot}}/{{options.scripts.css.main}}" media="async"/>
+    <link type="text/css" rel="stylesheet" href="{{relativeToRoot}}{{options.scripts.css.main}}" media="async"/>
   {{/unless}}
 
   <script type="text/javascript">
@@ -97,7 +97,7 @@
 
   {% body %}
 
-  <link type="text/css" rel="stylesheet" href="{{relativeToRoot}}/{{options.scripts.css.main}}" media="screen"/>
+  <link type="text/css" rel="stylesheet" href="{{relativeToRoot}}{{options.scripts.css.main}}" media="screen"/>
 
   {{#if options.server.websocket}}
     <script src="http://localhost:8050/socket.io/socket.io.js" type="text/javascript"></script>
