@@ -65,6 +65,7 @@
         ]
       },
       "css": {
+        "docs": "css/docs.css",
         "main": "css/style.css",
         "critical": "<%= destination %>/css/critical.css"
       }
