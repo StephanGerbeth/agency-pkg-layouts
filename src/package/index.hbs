@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
-<!--[if lt IE 7]>  <html class="no-js ie ie6 lte9 lte8 lte7 pkg loading" data-pkg="agency-pkg-layouts/default" lang="{{language}}"> <![endif]-->
-<!--[if IE 7]>     <html class="no-js ie ie7 lte9 lte8 lte7 pkg loading" data-pkg="agency-pkg-layouts/default" lang="{{language}}"> <![endif]-->
-<!--[if IE 8]>     <html class="no-js ie ie8 lte9 lte8 pkg loading" data-pkg="agency-pkg-layouts/default" lang="{{language}}"> <![endif]-->
-<!--[if IE 9]>     <html class="no-js ie ie9 lte9 pkg loading" data-pkg="agency-pkg-layouts/default" lang="{{language}}"> <![endif]-->
-<!--[if gt IE 9]>  <html class="no-js ie gt-ie9 pkg loading" data-pkg="agency-pkg-layouts/default" lang="{{language}}"><![endif]-->
-<!--[if !IE]><!--> <html class="no-js pkg loading" data-pkg="agency-pkg-layouts/default" lang="{{default.language}}"><!--<![endif]-->
+<!--[if lt IE 7]>  <html class="no-js ie ie6 lte9 lte8 lte7 pkg loading" data-pkg="agency-pkg-layouts/documentation" lang="{{language}}"> <![endif]-->
+<!--[if IE 7]>     <html class="no-js ie ie7 lte9 lte8 lte7 pkg loading" data-pkg="agency-pkg-layouts/documentation" lang="{{language}}"> <![endif]-->
+<!--[if IE 8]>     <html class="no-js ie ie8 lte9 lte8 pkg loading" data-pkg="agency-pkg-layouts/documentation" lang="{{language}}"> <![endif]-->
+<!--[if IE 9]>     <html class="no-js ie ie9 lte9 pkg pkg" data-pkg="agency-pkg-layouts/documentation" lang="{{language}}"> <![endif]-->
+<!--[if gt IE 9]>  <html class="no-js ie gt-ie9 pkg loading" data-pkg="agency-pkg-layouts/documentation" lang="{{language}}"><![endif]-->
+<!--[if !IE]><!--> <html class="no-js pkg loading" data-pkg="agency-pkg-layouts/documentation" lang="{{default.language}}"><!--<![endif]-->
 <head>
   {{#if options.server.weinre}}
   <script type="text/javascript">
@@ -31,20 +30,6 @@
   <meta name="apple-mobile-web-app-capable" content="{{{globals.head.meta.webAppCapable}}}" />
   <meta name="apple-mobile-web-app-status-bar-style" content="{{{globals.head.meta.statusBarStyle}}}">
   <meta name="format-detection" content="{{{globals.head.meta.formatDetection}}}">
-
-  <meta name="author" content="{{globals.head.meta.author}}">
-  <meta name="description" content="{{description}}">
-  <meta name="keywords" content="{{keywords}}">
-
-  <meta property="og:title" content="{{social.title}}">
-  <meta property="og:description" content="{{social.description}}">
-  <meta property="og:locale" content="{{social.localization}}" />
-  <!-- minimum size of preview images. If it's smaller than 200px, the image will be ignored by facebook. -->
-  <meta property="og:image" content="{{social.image.url}}">
-  <meta property="og:image:secure_url" content="{{social.image.secureUrl}}">
-  <meta property="og:image:type" content="{{social.image.type}}">
-  <meta property="og:image:width" content="{{social.image.width}}">
-  <meta property="og:image:height" content="{{social.image.height}}">
 
   <title>{{title}}</title>
 
@@ -92,12 +77,17 @@
           {{raw this}}
       {{/each}}
   </script>
+
+  <link type="text/css" rel="stylesheet" href="{{relativeToRoot}}{{options.scripts.css.docs}}" media="screen"/>
+
 </head>
 <body>
 
-  {% body %}
+  {{{{doc}}}}
+      {% body %}
+  {{{{/doc}}}}
 
-  <link type="text/css" rel="stylesheet" href="{{relativeToRoot}}{{options.scripts.css.main}}" media="screen"/>
+    <link type="text/css" rel="stylesheet" href="{{relativeToRoot}}{{options.scripts.css.main}}" media="screen"/>
 
   {{#if options.server.websocket}}
     <script src="http://localhost:8050/socket.io/socket.io.js" type="text/javascript"></script>
