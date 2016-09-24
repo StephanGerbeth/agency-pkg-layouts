@@ -207,7 +207,9 @@
         "dest": "<%= destination %>/css"
       }
     }],
-    "watch": []
+    "watch": [{
+      "src": ["test/pcss/**/*.pcss", "src/**/*.pcss"]
+    }]
   },
   "sitemap": {
     "subtasks": [{
